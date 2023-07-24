@@ -6,8 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { TempComponent } from './temp/temp.component';
 import { TempService } from './services/temp.service';
-import { MlProductList } from './mlproductlist';
-
 
 @NgModule({
   imports: [
@@ -16,7 +14,7 @@ import { MlProductList } from './mlproductlist';
     BrowserAnimationsModule,
   ],
   declarations: [
-    AppComponent,HeaderComponent,TempComponent,MlProductList
+    AppComponent,HeaderComponent,TempComponent
   ],
   providers: [TempService],  
   bootstrap: [AppComponent]
