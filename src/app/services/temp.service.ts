@@ -19,5 +19,5 @@ productList: MlProductList[];
       },  
       ];  
    return this.productList;  
- }          ``
+ }
 } 
