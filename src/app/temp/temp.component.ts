@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TempService } from '../services/temp.service';
+import { MlProductList } from '../mlproductlist';
+
+
 
 @Component({
   selector: 'app-temp',
@@ -6,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./temp.component.css']
 })
 export class TempComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  public products: MlProductList[];  
+  public description: MlProductList;  
+  constructor(  
+     private srvCart: TempService,  
+    
+  ) { }  
+ngOnInit() {  
+  this.products = this.srvCart.getproductlist();    
+} 
 
 }
