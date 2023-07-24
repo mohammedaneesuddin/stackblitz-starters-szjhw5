@@ -4,6 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import { TempComponent } from './temp/temp.component';
+import { TempService } from './services/temp.service';
+import { MlProductList } from './mlproductlist';
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -11,8 +16,9 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
   ],
   declarations: [
-    AppComponent,HeaderComponent
+    AppComponent,HeaderComponent,TempComponent,MlProductList
   ],
+  providers: [TempService],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
