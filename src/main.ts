@@ -1,8 +1,9 @@
 import 'zone.js/dist/zone';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { bootstrapApplication } from '@angular/platform-browser';
-
+//import { bootstrapApplication } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+//import { bootstrapApplication } from '@angular/platform-browser-dynamic';
 
 import { platformBrowser } from '@angular/platform-browser';
 
@@ -28,15 +29,16 @@ import { AppModule } from './app/app.module';
 // }
 
 // bootstrapApplication(App);
-
-
-
-
-// platformBrowserDynamic().bootstrapModule(AppModule)
-//   .catch(err => console.log(err));
-
-
 //  bootstrapApplication(AppModule)
 
-platformBrowser().bootstrapModule(AppModule)
+// platformBrowser().bootstrapModule(AppModule)
+//.catch(err => console.log(err));
+
+
+
+platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
+
+
+  
