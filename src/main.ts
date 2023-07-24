@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import 'hammerjs';
+
+import { platformBrowser } from '@angular/platform-browser';
+
 import { enableProdMode } from '@angular/core';
 
 import { AppModule } from './app/app.module';
@@ -34,4 +37,7 @@ import { AppModule } from './app/app.module';
 //   .catch(err => console.log(err));
 
 
-  bootstrapApplication(AppModule)
+//  bootstrapApplication(AppModule)
+
+platformBrowser().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
