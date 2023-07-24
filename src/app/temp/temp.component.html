@@ -5,11 +5,18 @@
        {{product.pizzaCategory}}
        <br><br/>
        <img width="150" src="{{product.pizzaLogoUrl}}"/>
-       <tr *ngFor="let productdetail of product.pizzaDetails">
-        {{productdetail.pizzaSize}}
-        {{productdetail.pizzaPrice}}
-        {{productdetail.pizzaCount}}
-       </tr>
+       <select>  
+        <option *ngFor="let productdetail of product.pizzaDetails">
+          {{productdetail.pizzaCount}}</option> 
+      </select> 
+       <select>  
+        <option *ngFor="let productdetail of product.pizzaDetails">
+          {{productdetail.pizzaPrice}}</option> 
+      </select> 
+      <select>  
+      <option *ngFor="let productdetail of product.pizzaDetails">
+        {{productdetail.pizzaSize}}</option> 
+    </select> 
+      
       </li>
-    
     </ul>
