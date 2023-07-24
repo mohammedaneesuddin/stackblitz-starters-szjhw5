@@ -1,9 +1,7 @@
 export class MlProductList {  
-  productname: string;  
-  productdescription: string;  
-  productdescription01: string;  
-  productcost: string;  
-  productsrc: string;  
-  total: number;  
-  quantity: number;  
+  pizzaId:number
+  pizzaName: string;  
+  pizzaCategory: string;   
+  pizzaLogoUrl: string; 
+  pizzaDetails:any
 }  

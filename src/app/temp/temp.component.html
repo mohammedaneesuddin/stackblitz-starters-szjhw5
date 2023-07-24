@@ -1,13 +1,15 @@
 
     <ul>
-      {{products}}
       <li *ngFor="let product of products">
-       <h1>{{product.productname}}</h1>
-       {{product.productdescription}}
-       {{product.productdescription01}}
-       {{product.productcost}}
-       {{product.productsrc}}
-       {{product.total}}
-       {{product.quantity}}
+       {{product.pizzaName}}
+       {{product.pizzaCategory}}
+       <br><br/>
+       <img width="150" src="{{product.pizzaLogoUrl}}"/>
+       <tr *ngFor="let productdetail of product.pizzaDetails">
+        {{productdetail.pizzaSize}}
+        {{productdetail.pizzaPrice}}
+        {{productdetail.pizzaCount}}
+       </tr>
       </li>
+    
     </ul>
