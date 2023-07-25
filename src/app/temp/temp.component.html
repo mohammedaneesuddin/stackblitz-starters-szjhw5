@@ -2,6 +2,8 @@
       <div class="menuleftcolumn">
         <ul>
           <li *ngFor="let product of products">
+            <div class="card">
+              <div class="card-body">
            {{product.pizzaName}}
            <br>
            {{product.pizzaCategory}}
@@ -27,6 +29,7 @@
         </select> 
         <br>
         <button>ADD</button>
+              </div> </div>
           </li>
         </ul>
 
