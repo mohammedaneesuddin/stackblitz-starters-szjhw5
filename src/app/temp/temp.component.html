@@ -1,28 +1,65 @@
+ <div class="row">
+      <div class="menuleftcolumn">
+        <ul>
+          <li *ngFor="let product of products">
+           {{product.pizzaName}}
+           <br>
+           {{product.pizzaCategory}}
+           <br><br/>
+           <img width="150" src="{{product.pizzaLogoUrl}}"/>
+           <br><br/>
+           Available Count:
+           <select>  
+            <option *ngFor="let productdetail of product.pizzaDetails">
+              {{productdetail.pizzaCount}}</option> 
+          </select> 
+          <br><br/>
+          Pizza Price:
+           <select>  
+            <option *ngFor="let productdetail of product.pizzaDetails">
+              {{productdetail.pizzaPrice}}</option> 
+          </select> 
+          <br><br/>
+          Pizza Size:
+          <select>  
+          <option *ngFor="let productdetail of product.pizzaDetails">
+            {{productdetail.pizzaSize}}</option> 
+        </select> 
+        <br>
+        <button>ADD</button>
+          </li>
+        </ul>
 
-    <ul>
-      <li *ngFor="let product of products">
-       {{product.pizzaName}}
-       {{product.pizzaCategory}}
-       <br><br/>
-       <img width="150" src="{{product.pizzaLogoUrl}}"/>
-       <br><br/>
-       Available Count:
-       <select>  
-        <option *ngFor="let productdetail of product.pizzaDetails">
-          {{productdetail.pizzaCount}}</option> 
-      </select> 
-      <br><br/>
-      Pizza Price:
-       <select>  
-        <option *ngFor="let productdetail of product.pizzaDetails">
-          {{productdetail.pizzaPrice}}</option> 
-      </select> 
-      <br><br/>
-      Pizza Size:
-      <select>  
-      <option *ngFor="let productdetail of product.pizzaDetails">
-        {{productdetail.pizzaSize}}</option> 
-    </select> 
-      
-      </li>
-    </ul>
+      </div>
+      <div class="menurightcolumn">
+        <ul>
+          <li *ngFor="let product of products">
+           {{product.pizzaName}}
+           <br>
+           {{product.pizzaCategory}}
+           <br><br/>
+           <img width="150" src="{{product.pizzaLogoUrl}}"/>
+           <br><br/>
+           Available Count:
+           <select>  
+            <option *ngFor="let productdetail of product.pizzaDetails">
+              {{productdetail.pizzaCount}}</option> 
+          </select> 
+          <br><br/>
+          Pizza Price:
+           <select>  
+            <option *ngFor="let productdetail of product.pizzaDetails">
+              {{productdetail.pizzaPrice}}</option> 
+          </select> 
+          <br><br/>
+          Pizza Size:
+          <select>  
+          <option *ngFor="let productdetail of product.pizzaDetails">
+            {{productdetail.pizzaSize}}</option> 
+        </select> 
+        <br>
+        <button>ADD</button>
+          </li>
+        </ul>
+      </div>
+    </div>
