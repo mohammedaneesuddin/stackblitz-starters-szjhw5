@@ -68,6 +68,8 @@ export class TempComponent implements OnInit {
       const pizzaDetail = this.selectedPizza.pizzaDetails.find((detail: PizzaDetail) => detail.pizzaSize === this.selectedSize);
       if (pizzaDetail) {
         this.selectedPrice = pizzaDetail.pizzaPrice;
+      } else {
+        this.selectedPrice = 0; // Set to 0 if the selected size does not have a price
       }
     }
   }

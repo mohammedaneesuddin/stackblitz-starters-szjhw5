@@ -1,33 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
-      <div class="card-container">
-        <ul>
-          <li *ngFor="let product of products" class="card m-2" style="width: 240px;">
-            <div class="card">
-              <div class="card-body">
-                <img width="240" src="{{ product.pizzaLogoUrl }}" class="card-img-top" />
-                <br><br/>
-                <h6 class="card-title">{{ product.pizzaName | uppercase }}, {{ product.pizzaCategory | uppercase }}</h6>
-                Pizza Size:
-                <select [(ngModel)]="selectedSize" (change)="calculatePrice()">
-                  <option disabled selected>Select Size</option>
-                  <option *ngFor="let productdetail of product.pizzaDetails" [value]="productdetail.pizzaSize">
-                    {{ productdetail.pizzaSize }}
-                  </option>
-                </select>
-                <br>
-                <p *ngIf="selectedPrice > 0">{{ selectedPrice }} &#8377;</p>
-                <br>
-                <button class="btn btn-primary">Add To Cart</button>
-              </div>
-            </div>
-          </li>
-        </ul>
+    <div class="col-12">
+      <div class="card-container d-flex flex-wrap justify-content-center">
+        <div *ngFor="let product of products" class="card m-2" style="width: 240px;">
+          <img width="240" src="{{ product.pizzaLogoUrl }}" class="card-img-top" />
+          <div class="card-body">
+            <h6 class="card-title">{{ product.pizzaName | uppercase }}, {{ product.pizzaCategory | uppercase }}</h6>
+            Pizza Size:
+            <select [(ngModel)]="selectedSize" (change)="calculatePrice()">
+              <option disabled selected>Select Size</option>
+              <option *ngFor="let productdetail of product.pizzaDetails" [value]="productdetail.pizzaSize">
+                {{ productdetail.pizzaSize }}
+              </option>
+            </select>
+            <br>
+            <p *ngIf="selectedPrice > 0">{{ selectedPrice }} &#8377;</p>
+            <br>
+            <button class="btn btn-primary">Add To Cart</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-4">
-      <!-- Your additional content for the right column -->
     </div>
   </div>
 </div>
