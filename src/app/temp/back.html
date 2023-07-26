@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+      <div class="col-8">
+        <ul>
+          <li *ngFor="let product of products">
+            <div class="card">
+              <div class="card-body">
+           <img width="240" src="{{product.pizzaLogoUrl}}" class="card-img-top"/>
+           <br><br/>
+           <h6 class="card-title">{{product.pizzaName | uppercase}} , {{product.pizzaCategory | uppercase}}</h6>
+           <!-- Available Count:
+           <select>  
+            <option *ngFor="let productdetail of product.pizzaDetails">
+              {{productdetail.pizzaCount}}</option> 
+          </select>  -->
+          Pizza Price:
+           <select>  
+            <option *ngFor="let productdetail of product.pizzaDetails">
+              <span>&#8377;</span>
+                         {{productdetail.pizzaPrice}}</option> 
+          </select> 
+          Pizza Size:
+          <select>  
+          <option *ngFor="let productdetail of product.pizzaDetails">
+            {{productdetail.pizzaSize}}</option> 
+        </select> 
+        <br>
+        <button class ="btn btn primary"> Add To Cart </button>
+              </div> </div>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
+  </div>
