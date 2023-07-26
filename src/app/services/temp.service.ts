@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';  
-import { MlProductList } from '../mlproductlist';
+import { MlProductList ,PizzaDetail } from '../mlproductlist';
 
 
 export class TempService {  
