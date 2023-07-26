@@ -1,5 +1,5 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* or justify-content: space-between; depending on your preferred alignment */
+  justify-content: flex-start;
 }
