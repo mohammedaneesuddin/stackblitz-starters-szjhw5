@@ -7,7 +7,7 @@
               <div class="card-body">
            <img width="240" src="{{product.pizzaLogoUrl}}" class="card-img-top"/>
            <br><br/>
-           <h6 class="card-title">{{product.pizzaName}} , {{product.pizzaCategory}}</h6>
+           <h6 class="card-title">{{product.pizzaName | uppercase}} , {{product.pizzaCategory | uppercase}}</h6>
            <!-- Available Count:
            <select>  
             <option *ngFor="let productdetail of product.pizzaDetails">
