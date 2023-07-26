@@ -44,7 +44,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { TempService } from '../services/temp.service';
-import { MlProductList, PizzaDetail } from '../mlproductlist';
+import { MlProductList } from '../mlproductlist';
 
 @Component({
   selector: 'app-temp',
@@ -52,10 +52,9 @@ import { MlProductList, PizzaDetail } from '../mlproductlist';
   styleUrls: ['./temp.component.css']
 })
 export class TempComponent implements OnInit {
-  public products: MlProductList[];  
-  selectedPizza: MlProductList | null = null;
+  public products: MlProductList[];
   selectedSize: string | null = null;
-  selectedPrice: number = 0;
+  selectedPrice: number = 0; // Add this line to hold the selected pizza's price
 
   constructor(private srvCart: TempService) { }
 
@@ -63,14 +62,14 @@ export class TempComponent implements OnInit {
     this.products = this.srvCart.getproductlist();    
   } 
 
-  calculatePrice() {
-    if (this.selectedPizza && this.selectedSize) {
-      const pizzaDetail = this.selectedPizza.pizzaDetails.find((detail: PizzaDetail) => detail.pizzaSize === this.selectedSize);
+  calculatePrice(selectedProduct: MlProductList) {
+    if (this.selectedSize) {
+      const pizzaDetail = selectedProduct.pizzaDetails.find((detail:any) => detail.pizzaSize === this.selectedSize);
       if (pizzaDetail) {
-        this.selectedPrice = pizzaDetail.pizzaPrice;
-      } else {
-        this.selectedPrice = 0; // Set to 0 if the selected size does not have a price
+        this.selectedPrice = pizzaDetail.pizzaPrice; // Update the selectedPrice property
       }
+    } else {
+      this.selectedPrice = 0; // Set to 0 if no pizza size is selected
     }
   }
 }

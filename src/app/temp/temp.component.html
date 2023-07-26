@@ -7,14 +7,14 @@
           <div class="card-body">
             <h6 class="card-title">{{ product.pizzaName | uppercase }}, {{ product.pizzaCategory | uppercase }}</h6>
             Pizza Size:
-            <select [(ngModel)]="selectedSize" (change)="calculatePrice()">
+            <select [(ngModel)]="selectedSize" (change)="calculatePrice(product)">
               <option disabled selected>Select Size</option>
               <option *ngFor="let productdetail of product.pizzaDetails" [value]="productdetail.pizzaSize">
                 {{ productdetail.pizzaSize }}
               </option>
             </select>
             <br>
-            <p *ngIf="selectedPrice > 0">{{ selectedPrice }} &#8377;</p>
+            <p *ngIf="selectedSize">Price: {{ selectedPrice }} &#8377;</p> <!-- Display the selectedPrice directly -->
             <br>
             <button class="btn btn-primary">Add To Cart</button>
           </div>

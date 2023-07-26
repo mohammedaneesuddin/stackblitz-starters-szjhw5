@@ -3,3 +3,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+.card {
+  margin-bottom: 20px;
+}
